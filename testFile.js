@@ -1,24 +1,32 @@
 const fs = require("fs");
 let roster = {
-  appleJacks: JSON.parse(fs.readFileSync("roster.json"))["kix"],
+  kix: JSON.parse(fs.readFileSync("roster.json"))["kix"],
 };
-let existingPairs = JSON.parse(fs.readFileSync("existing-pairs.json"));
+let pairsTracker = JSON.parse(fs.readFileSync("existing-pairs.json"));
 const { createPairs } = require("./generate-pairs");
 
-const pairs = createPairs(roster, existingPairs);
+const pairs = createPairs(roster, pairsTracker);
+
 const pairIds = Object.keys(pairs).reduce((tracker, key) => {
-  tracker[key] = pairs[key].map((p) => {
-    return p
+  tracker[key] = pairs[key].reduce((t, p) => {
+    let pairCombo = p
       .map((s) => s.id)
       .sort()
       .join("");
-  });
+    t[pairCombo] = true;
+    return t;
+  }, {});
   return tracker;
 }, {});
-console.dir("Pairs:", pairs);
-console.log("Pair Ids:", pairIds);
+
+console.log("Pairs:", pairs['kix']);
+
+let existingPairs = JSON.parse(fs.readFileSync("existing-pairs.json"));
+for (let teamName in existingPairs) {
+  existingPairs[teamName] = {
+    ...existingPairs[teamName],
+    ...pairIds[teamName],
+  };
+}
+
 console.log("Existing:", existingPairs);
-
-
-
-// NOTES

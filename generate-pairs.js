@@ -1,4 +1,4 @@
-function createPairs(classObject, existingPairs, pairSize = 3) {
+function createPairs(classObject, pairsTracker, pairSize = 3) {
   let pairs = {};
   // Iterate through each team
   for (let teamName in classObject) {
@@ -6,7 +6,7 @@ function createPairs(classObject, existingPairs, pairSize = 3) {
     //while the team roster has more students than pairSize
     while (classObject[teamName].roster.length > pairSize) {
       //Add Pairs to the pairs object
-      pairs[teamName].push(selectPair(teamName, classObject[teamName], existingPairs));
+      pairs[teamName].push(selectPair(teamName, classObject[teamName], pairsTracker));
     }
     //When there's only students left for 1 pair
     //if there's only one student left
@@ -19,13 +19,13 @@ function createPairs(classObject, existingPairs, pairSize = 3) {
   return pairs;
 }
 
-function selectPair(teamName, learningTeam, existingPairs) {
+function selectPair(teamName, learningTeam, pairsTracker) {
   //Brute Force
   //create pair, check if has been created
   let pairCombo = generatePairIdCombo(extractStudentIds(learningTeam.roster));
   let retryCount = 0;
 
-  while (retryCount < 10 && !checkPairComboAvailability(pairCombo.join(""), existingPairs)) {
+  while (retryCount < 10 && !checkPairComboAvailability(pairCombo.join(""), pairsTracker)) {
     // TODO : Prevent reusing the same combos in generation Fn
     pairCombo = generatePairIdCombo(
       generatePairIdCombo(extractStudentIds(learningTeam.roster))
@@ -41,7 +41,8 @@ function selectPair(teamName, learningTeam, existingPairs) {
 
     let pair = learningTeam.roster.filter((s) => pairCombo.includes(s.id));
 
-    existingPairs[teamName][pairCombo.join("")] = true;
+    updatePairTracker(pairCombo.join(""), pairsTracker, teamName)
+
     learningTeam.roster = learningTeam.roster.filter(
       (s) => !pairCombo.includes(s.id)
     );
@@ -60,9 +61,14 @@ function generatePairIdCombo(availableIds) {
   return ids.sort();
 }
 
-function checkPairComboAvailability(pairCombo, existingPairs) {
-  return !existingPairs[pairCombo];
+function checkPairComboAvailability(pairCombo, pairsTracker) {
+  return !pairsTracker[pairCombo];
 }
+
+function updatePairTracker(pairCombo, pairTracker, teamName){
+  pairTracker[teamName][pairCombo] = true;
+}
+
 
 function extractStudentIds(students){
   return students.map((s) => s.id)
