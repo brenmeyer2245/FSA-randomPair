@@ -1,6 +1,6 @@
 const fs = require("fs");
 let roster = {
-  appleJacks: JSON.parse(fs.readFileSync("roster.json"))["appleJacks"],
+  appleJacks: JSON.parse(fs.readFileSync("roster.json"))["kix"],
 };
 let existingPairs = JSON.parse(fs.readFileSync("existing-pairs.json"));
 const { createPairs } = require("./generate-pairs");
@@ -15,6 +15,7 @@ const pairIds = Object.keys(pairs).reduce((tracker, key) => {
   });
   return tracker;
 }, {});
+console.dir("Pairs:", pairs);
 console.log("Pair Ids:", pairIds);
 console.log("Existing:", existingPairs);
 

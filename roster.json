@@ -67,20 +67,20 @@
   "fruitLoops": {
     "roster": [
       { "id": 1, "name": "Christian Conner" },
-      { "id": 1, "name": "Kevin Salgado" },
-      { "id": 1, "name": "Malika Tem" },
-      { "id": 1, "name": "Morgan Rochelle" }
+      { "id": 2, "name": "Kevin Salgado" },
+      { "id": 3, "name": "Malika Tem" },
+      { "id": 4, "name": "Morgan Rochelle" }
     ]
   },
   "kix": {
     "roster": [
       { "id": 1, "name": "Alejandro Martinez" },
-      { "id": 1, "name": "David Stein" },
-      { "id": 1, "name": "Jack Young" },
-      { "id": 1, "name": "Caden Holland" },
-      { "id": 1, "name": "Kindra Williams" },
-      { "id": 1, "name": "Kona Mazariegos" },
-      { "id": 1, "name": "Miles Clark" }
+      { "id": 2, "name": "David Stein" },
+      { "id": 3, "name": "Jack Young" },
+      { "id": 4, "name": "Caden Holland" },
+      { "id": 5, "name": "Kindra Williams" },
+      { "id": 6, "name": "Kona Mazariegos" },
+      { "id": 7, "name": "Miles Clark" }
     ]
   },
   "luckyCharms": {
