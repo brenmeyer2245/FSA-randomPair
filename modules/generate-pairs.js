@@ -6,7 +6,9 @@ function createPairs(classObject, pairsTracker, pairSize = 3) {
     //while the team roster has more students than pairSize
     while (classObject[teamName].roster.length > pairSize) {
       //Add Pairs to the pairs object
-      pairs[teamName].push(selectPair(teamName, classObject[teamName], pairsTracker));
+      pairs[teamName].push(
+        selectPair(teamName, classObject[teamName], pairsTracker)
+      );
     }
     //When there's only students left for 1 pair
     //if there's only one student left
@@ -25,7 +27,10 @@ function selectPair(teamName, learningTeam, pairsTracker) {
   let pairCombo = generatePairIdCombo(extractStudentIds(learningTeam.roster));
   let retryCount = 0;
 
-  while (retryCount < 10 && !checkPairComboAvailability(pairCombo.join(""), pairsTracker)) {
+  while (
+    retryCount < 10 &&
+    !checkPairComboAvailability(pairCombo.join(""), pairsTracker)
+  ) {
     // TODO : Prevent reusing the same combos in generation Fn
     pairCombo = generatePairIdCombo(
       generatePairIdCombo(extractStudentIds(learningTeam.roster))
@@ -38,10 +43,9 @@ function selectPair(teamName, learningTeam, pairsTracker) {
     //TODO: Pass along a string "To be created Manually"
     return [{ name: "To Be Created Manually" }];
   } else {
-
     let pair = learningTeam.roster.filter((s) => pairCombo.includes(s.id));
 
-    updatePairTracker(pairCombo.join(""), pairsTracker, teamName)
+    updatePairTracker(pairCombo.join(""), pairsTracker, teamName);
 
     learningTeam.roster = learningTeam.roster.filter(
       (s) => !pairCombo.includes(s.id)
@@ -53,9 +57,12 @@ function selectPair(teamName, learningTeam, pairsTracker) {
 function generatePairIdCombo(availableIds) {
   // Take a hash of available ids
   let ids = [];
-  while(ids.length < 3 && availableIds.length){
-    // TODO: handle tracker with no ids 
-    let randomId = availableIds.splice(randomNumber(0, availableIds.length), 1)[0];
+  while (ids.length < 3 && availableIds.length) {
+    // TODO: handle tracker with no ids
+    let randomId = availableIds.splice(
+      randomNumber(0, availableIds.length),
+      1
+    )[0];
     ids.push(randomId);
   }
   return ids.sort();
@@ -65,17 +72,39 @@ function checkPairComboAvailability(pairCombo, pairsTracker) {
   return !pairsTracker[pairCombo];
 }
 
-function updatePairTracker(pairCombo, pairTracker, teamName){
+function updatePairTracker(pairCombo, pairTracker, teamName) {
   pairTracker[teamName][pairCombo] = true;
 }
 
-
-function extractStudentIds(students){
-  return students.map((s) => s.id)
+function extractStudentIds(students) {
+  return students.map((s) => s.id);
 }
 
-function randomNumber(min, max){
-    return Math.random() * (max - min) + min;
+let randomNumber = (min, max) => {
+  return Math.random() * (max - min) + min;
+};
+
+function getNewExistingPairs(pairs, existingPairs) {
+  const pairIds = Object.keys(pairs).reduce((tracker, key) => {
+    tracker[key] = pairs[key].reduce((t, p) => {
+      let pairCombo = p
+        .map((s) => s.id)
+        .sort()
+        .join("");
+      t[pairCombo] = true;
+      return t;
+    }, {});
+    return tracker;
+  }, {});
+
+  for (let teamName in existingPairs) {
+    existingPairs[teamName] = {
+      ...existingPairs[teamName],
+      ...pairIds[teamName],
+    };
+  }
+  return existingPairs;
 }
 
-module.exports = { createPairs };
+APP.createPairs = createPairs;
+APP.getNewExistingPairs = getNewExistingPairs;

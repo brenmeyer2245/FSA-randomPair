@@ -1,77 +1,4 @@
 {
-  "appleJacks": {
-    "roster": [
-      { "id": 1, "name": "Antonio Santiago" },
-      { "id": 2, "name": "Diem Nguyen" },
-      { "id": 3, "name": "Leonardo Flores" },
-      { "id": 4, "name": "Laurie Moss" },
-      { "id": 5, "name": "Ruben Lazaro" },
-      { "id": 6, "name": "Zach DeLoach" }
-    ]
-  },
-  "capnCrunch": {
-    "roster": [
-      { "id": 7, "name": "Adam Erwin" },
-      { "id": 8, "name": "Baxter Penfield" },
-      { "id": 9, "name": "Geremi Mazelie" },
-      { "id": 10, "name": "MaryRuth Schrotenboer" },
-      { "id": 11, "name": "Phillip Hess" },
-      { "id": 12, "name": "Sarah Morris" }
-    ]
-  },
-  "cheerios": {
-    "roster": [
-      { "id": 13, "name": "Andreu Ortiz" },
-      { "id": 14, "name": "Annalise Gaston" },
-      { "id": 15, "name": "Anthony Garza" },
-      { "id": 16, "name": "Brendon McPherson" },
-      { "id": 17, "name": "Michael Dunkel" },
-      { "id": 18, "name": "Riley Meskill" },
-      { "id": 19, "name": "Jordan Steger" },
-      { "id": 20, "name": "Julio Figueroa" },
-      { "id": 21, "name": "Kacey Ellis" }
-    ]
-  },
-  "cocoPebbles": {
-    "roster": [
-      { "id": 1, "name": "Jordan Steger" },
-      { "id": 1, "name": "Julio Figueroa" },
-      { "id": 1, "name": "Kacey Ellis" },
-      { "id": 1, "name": "Maleiyah Branch-Davis" },
-      { "id": 1, "name": "Marquise Ferrell" },
-      { "id": 1, "name": "Tim Swiatowiec" }
-    ]
-  },
-  "frenchToastCrunch": {
-    "roster": [
-      { "id": 1, "name": "Angela Brumfield" },
-      { "id": 1, "name": "Jacqueline Floyd" },
-      { "id": 1, "name": "Jeremy mitchell" },
-      { "id": 1, "name": "Keith Lindsey" },
-      { "id": 1, "name": "Kiara Bates" },
-      { "id": 1, "name": "Larry Williams" },
-      { "id": 1, "name": "Margarita Castrejon" },
-      { "id": 1, "name": "Xaviera Calvert" }
-    ]
-  },
-  "frostedFlakes": {
-    "roster": [
-      { "id": 1, "name": "Ashar Durrani" },
-      { "id": 1, "name": "Austin Kyles" },
-      { "id": 1, "name": "Cristian Posadas" },
-      { "id": 1, "name": "Jeffrey Hudgins" },
-      { "id": 1, "name": "Noel Moreno" },
-      { "id": 1, "name": "TRAE BREUNIG" }
-    ]
-  },
-  "fruitLoops": {
-    "roster": [
-      { "id": 1, "name": "Christian Conner" },
-      { "id": 2, "name": "Kevin Salgado" },
-      { "id": 3, "name": "Malika Tem" },
-      { "id": 4, "name": "Morgan Rochelle" }
-    ]
-  },
   "kix": {
     "roster": [
       { "id": 1, "name": "Alejandro Martinez" },
@@ -81,28 +8,6 @@
       { "id": 5, "name": "Kindra Williams" },
       { "id": 6, "name": "Kona Mazariegos" },
       { "id": 7, "name": "Miles Clark" }
-    ]
-  },
-  "luckyCharms": {
-    "roster": [
-      { "id": 1, "name": "Austin Lawrence" },
-      { "id": 1, "name": "Chase Harris" },
-      { "id": 1, "name": "Chris Hopson" },
-      { "id": 1, "name": "Frederick Price" },
-      { "id": 1, "name": "Hunter Lindsay" },
-      { "id": 1, "name": "Jordan Beck" },
-      { "id": 1, "name": "Zachary Power" }
-    ]
-  },
-  "riceKrispies": {
-    "roster": [
-      { "id": 1, "name": "Bardell Wilson" },
-      { "id": 1, "name": "Hezekiah Griffiths" },
-      { "id": 1, "name": "Jonathan Mitchell" },
-      { "id": 1, "name": "Minsung Kim" },
-      { "id": 1, "name": "Tevin Parker" },
-      { "id": 1, "name": "Tori Bankston" },
-      { "id": 1, "name": "Justin Nolen" }
     ]
   }
 }
