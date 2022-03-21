@@ -1,15 +1,12 @@
 {
-  "appleJacks": {
-    "roster": [
-     
-    ]
-  },
   "capnCrunch": {
     "roster": [
       { "id": 8, "name": "Adam Erwin" },
       { "id": 9, "name": "Baxter Penfield" },
       { "id": 10, "name": "Geremi Mazelie" },
       { "id": 11, "name": "MaryRuth Schrotenboer" },
+      { "id": 45, "name": "Malika Tem" },
+      { "id": 46, "name": "Morgan Rochelle" },
       { "id": 12, "name": "Phillip Hess" },
       { "id": 13, "name": "Sarah Morris" }
     ]
@@ -35,10 +32,7 @@
       { "id": 61, "name": "Bardell Wilson" },
       { "id": 62, "name": "Hezekiah Griffiths" },
       { "id": 63, "name": "Jonathan Mitchell" },
-      { "id": 64, "name": "Minsung Kim" },
-      { "id": 65, "name": "Tevin Parker" },
-      { "id": 66, "name": "Tori Bankston" },
-      { "id": 67, "name": "Justin Nolen" }
+      { "id": 64, "name": "Minsung Kim" }
     ]
   },
   "frenchToastCrunch": {
@@ -49,36 +43,27 @@
       { "id": 32, "name": "Keith Lindsey" },
       { "id": 33, "name": "Kiara Bates" },
       { "id": 34, "name": "Larry Williams" },
-      { "id": 35, "name": "Margarita Castrejon" },
-      { "id": 36, "name": "Xaviera Calvert" }
+      { "id": 35, "name": "Margarita Castrejon" }
     ]
   },
   "frostedFlakes": {
     "roster": [
-      { "id": 37, "name": "Ashar Durrani" },
       { "id": 38, "name": "Austin Kyles" },
+      {  "id": 50, "name": "Caden Holland" },
+
       { "id": 39, "name": "Cristian Posadas" },
       { "id": 40, "name": "Jeffrey Hudgins" },
       { "id": 41, "name": "Noel Moreno" },
       { "id": 42, "name": "TRAE BREUNIG" },
-      { "id": 2, "name": "Antonio Santiago" },
-      { "id": 3, "name": "Diem Nguyen" },
-      { "id": 5, "name": "Laurie Moss" },
-      { "id": 6, "name": "Ruben Lazaro" },
-      { "id": 7, "name": "Zach DeLoach" }
+       { "id": 7, "name": "Zach DeLoach" }
     ]
   },
   "kix": {
     "roster": [
       { "id": 4, "name": "Leonardo Flores" },
-      { "id": 43, "name": "Christian Conner" },
-      {"id": 44, "name": "Kevin Salgado" },
-      { "id": 45, "name": "Malika Tem" },
-      { "id": 46, "name": "Morgan Rochelle" },
-      { "id": 47, "name": "Alex Martinez" },
+    { "id": 47, "name": "Alex Martinez" },
       { "id": 48, "name": "David Stein" },
       {  "id": 49, "name": "Jack Young" },
-      {  "id": 50, "name": "Caden Holland" },
       { "id": 51, "name": "Kindra Williams" },
       {  "id": 52, "name": "Kona Mazariegos" },
       { "id": 53, "name": "Miles Clark" }
@@ -94,12 +79,12 @@
       { "id": 59, "name": "Jordan Beck" },
       { "id": 60, "name": "Zachary Power" },
       { "id": 2, "name": "Antonio Santiago" },
-      { "id": 3, "name": "Diem Nguyen" },
-      { "id": 4, "name": "Leonardo Flores" },
       { "id": 5, "name": "Laurie Moss" },
-      { "id": 6, "name": "Ruben Lazaro" },
-      { "id": 7, "name": "Zach DeLoach" }
+      { "id": 6, "name": "Ruben Lazaro" }
     ]
   }
+
+
+
  
 }
