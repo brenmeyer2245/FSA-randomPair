@@ -11,9 +11,7 @@ function addPairsToDOM(pairs) {
     const teamTitle = document.createElement("h1");
     teamTitle.innerText = team;
     pairNode.appendChild(teamTitle);
-    pairs[team].forEach((p, i) => {
-
-      pairNode.append("------------------------")
+    pairs[team].forEach((p) => {
       const pair = document.createElement("ul");
       p.forEach((s) => {
         const studentItem = document.createElement("li");
@@ -39,17 +37,31 @@ function extractInputs() {
 }
 
 function setupPage() {
-  document.getElementById(HTML_Keys.roster_input).value = JSON.stringify(
-   APP.ROSTER
-  );
-  document.getElementById(HTML_Keys.existing_pairs_input).value =
-    JSON.stringify(APP.EXISTING_PAIRS);
+  document.getElementById(HTML_Keys.roster_input).value = JSON.stringify({
+    kix: {
+      roster: [
+        { id: 1, name: "Alejandro Martinez" },
+        { id: 2, name: "David Stein" },
+        { id: 3, name: "Jack Young" },
+        { id: 4, name: "Caden Holland" },
+        { id: 5, name: "Kindra Williams" },
+        { id: 6, name: "Kona Mazariegos" },
+        { id: 7, name: "Miles Clark" },
+      ],
+    },
+  });
+  
+  document.getElementById(HTML_Keys.existing_pairs_input).value = JSON.stringify({
+    kix: {
+      135: true,
+      246: true,
+    },
+  });
 }
 
-setupPage();
+setupPage()
 
 APP.render = {
   extractInputs,
   addPairsToDOM,
 };
-

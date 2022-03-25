@@ -7,7 +7,7 @@ function createPairs(classObject, pairsTracker, pairSize = 3) {
     while (classObject[teamName].roster.length > pairSize) {
       //Add Pairs to the pairs object
       pairs[teamName].push(
-        selectPair(teamName, classObject[teamName], pairsTracker, pairSize)
+        selectPair(teamName, classObject[teamName], pairsTracker)
       );
     }
     //When there's only students left for 1 pair
@@ -21,10 +21,10 @@ function createPairs(classObject, pairsTracker, pairSize = 3) {
   return pairs;
 }
 
-function selectPair(teamName, learningTeam, pairsTracker, pairSize) {
+function selectPair(teamName, learningTeam, pairsTracker) {
   //Brute Force
   //create pair, check if has been created
-  let pairCombo = generatePairIdCombo(extractStudentIds(learningTeam.roster), pairSize);
+  let pairCombo = generatePairIdCombo(extractStudentIds(learningTeam.roster));
   let retryCount = 0;
 
   while (
@@ -54,10 +54,10 @@ function selectPair(teamName, learningTeam, pairsTracker, pairSize) {
   }
 }
 
-function generatePairIdCombo(availableIds, pairSize) {
+function generatePairIdCombo(availableIds) {
   // Take a hash of available ids
   let ids = [];
-  while (ids.length < pairSize && availableIds.length) {
+  while (ids.length < 3 && availableIds.length) {
     // TODO: handle tracker with no ids
     let randomId = availableIds.splice(
       randomNumber(0, availableIds.length),
@@ -106,5 +106,11 @@ function getNewExistingPairs(pairs, existingPairs) {
   return existingPairs;
 }
 
-APP.createPairs = createPairs;
-APP.getNewExistingPairs = getNewExistingPairs;
+module.exports = {
+  createPairs,
+  selectPair,
+  getNewExistingPairs,
+  randomNumber,
+  extractStudentIds,
+  checkPairComboAvailability
+}

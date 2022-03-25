@@ -1,0 +1,28 @@
+{
+  "name": "randompairing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "mocha \"./tests/*.spec.js\" --exit"
+  },
+  "dependencies": {
+    "chai": "^4.3.6"
+  },
+  "devDependencies": {
+    "mocha": "^9.2.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenmeyer2245/FSA-randomPair.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brenmeyer2245/FSA-randomPair/issues"
+  },
+  "homepage": "https://github.com/brenmeyer2245/FSA-randomPair#readme"
+}

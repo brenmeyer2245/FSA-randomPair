@@ -64,7 +64,6 @@
     { "id": 47, "name": "Alex Martinez" },
       { "id": 48, "name": "David Stein" },
       {  "id": 49, "name": "Jack Young" },
-      { "id": 51, "name": "Kindra Williams" },
       {  "id": 52, "name": "Kona Mazariegos" },
       { "id": 53, "name": "Miles Clark" }
     ]
@@ -83,8 +82,4 @@
       { "id": 6, "name": "Ruben Lazaro" }
     ]
   }
-
-
-
- 
 }
