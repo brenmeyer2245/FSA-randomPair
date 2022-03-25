@@ -1,17 +1,17 @@
  
  
  function main(){
-    const {roster, existingPairs} = APP.render.extractInputs();
-    const classRoster = JSON.parse(roster);
-    const pairTracker = JSON.parse(existingPairs);
+    const {ROSTER, EXISTING_PAIRS} = APP
+    const classRoster = Object.create(ROSTER)
+    const pairTracker = Object.create(EXISTING_PAIRS)
 
-    const pairs = APP.createPairs(classRoster, pairTracker)
+    const pairs = APP.createPairs(classRoster, pairTracker, 2)
 
     APP.render.addPairsToDOM(pairs)
     const newExisting = APP.getNewExistingPairs(pairs, JSON.parse(existingPairs))
     
     //Print out updated Existing Pairs
-    console.log("New Existing Pairs", newExisting);
+    console.log("New Existing Pairs", JSON.stringify(newExisting));
 }
 
 
