@@ -8,7 +8,7 @@
     const pairs = APP.createPairs(classRoster, pairTracker, 2)
 
     APP.render.addPairsToDOM(pairs)
-    const newExisting = APP.getNewExistingPairs(pairs, JSON.parse(existingPairs))
+    const newExisting = APP.getNewExistingPairs(pairs, EXISTING_PAIRS)
     
     //Print out updated Existing Pairs
     console.log("New Existing Pairs", JSON.stringify(newExisting));
